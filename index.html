@@ -241,62 +241,38 @@ width:92%;
 padding:20px;
 }
 
-/* globe nhỏ lại */
-.country-bar{
-position:fixed;
-bottom:10px;
-width:100%;
-overflow:hidden;
-white-space:nowrap;
-}
+/* globe */
 
-.country-bar span{
-display:inline-block;
-color:#00ffff;
-font-size:14px;
-font-weight:bold;
-text-shadow:0 0 10px #00ffff;
-animation:scrollText 12s linear infinite;
-}
-
-@keyframes scrollText{
-0%{ transform:translateX(100%); }
-100%{ transform:translateX(-100%); }
-}
 .globe{
 position:absolute;
 width:60px;
 height:60px;
+bottom:110px;
 top:auto;
-bottom:100px;
 transform:none;
 }
 
-/* vị trí 4 globe */
+/* globe positions */
 
 #vietnam{ left:5%; }
 #srilanka{ left:30%; }
 #hongkong{ right:30%; }
 #singapore{ right:5%; }
 
-/* text dưới globe */
+/* TEXT NẰM NGANG */
 
 .globe-text{
 position:absolute;
-top:auto;
-bottom:60px;
+bottom:75px;
 font-size:11px;
-width:75px;
+width:25%;
 text-align:center;
-line-height:1.2;
 }
 
-/* chia đều 4 cột */
-
-#vn-text{ left:3%; }
-#lk-text{ left:28%; }
-#hk-text{ right:28%; }
-#sg-text{ right:3%; }
+#vn-text{ left:0%; }
+#lk-text{ left:25%; }
+#hk-text{ left:50%; }
+#sg-text{ left:75%; }
 
 h1{
 font-size:26px;
@@ -339,14 +315,10 @@ font-size:13px;
 <div id="srilanka" class="globe"></div>
 <div id="hongkong" class="globe"></div>
 
-<div class="country-bar">
-<span>
-🌍 Xin chào Việt Nam 🇻🇳 &nbsp;&nbsp;&nbsp;
-🌍 Hello Sri Lanka 🇱🇰 &nbsp;&nbsp;&nbsp;
-🌍 Hello Hong Kong 🇭🇰 &nbsp;&nbsp;&nbsp;
-🌍 Hello Singapore 🇸🇬
-</span>
-</div>
+<div id="vn-text" class="globe-text">Việt Nam 🇻🇳</div>
+<div id="sg-text" class="globe-text">Singapore 🇸🇬</div>
+<div id="lk-text" class="globe-text">Sri Lanka 🇱🇰</div>
+<div id="hk-text" class="globe-text">Hong Kong 🇭🇰</div>
 
 <div class="container">
 
@@ -386,14 +358,9 @@ CSKH
 
 <script>
 
-/* INTRO VIDEO */
-
 setTimeout(function(){
 document.getElementById("intro").style.display="none";
 },5000);
-
-/* GLOBE */
-
 
 function createGlobe(id, flag, link){
 
@@ -457,8 +424,6 @@ createGlobe("vietnam","https://flagcdn.com/w640/vn.png","https://c168kmn.top");
 createGlobe("singapore","https://flagcdn.com/w640/sg.png","https://c168kmn.top");
 createGlobe("srilanka","https://flagcdn.com/w640/lk.png","https://c168kmn.top");
 createGlobe("hongkong","https://flagcdn.com/w640/hk.png","https://c168kmn.top");
-
-/* USER COUNTER */
 
 let users = 50000;
 
