@@ -28,7 +28,7 @@ color:white;
 overflow:hidden;
 }
 
-/* VIDEO */
+/* VIDEO BACKGROUND */
 
 video{
 position:fixed;
@@ -86,6 +86,9 @@ text-shadow:0 0 10px #00ffff;
 #vietnam{ left:40px; }
 #singapore{ right:40px; }
 
+#srilanka{ left:260px; }
+#hongkong{ right:260px; }
+
 #vn-text{
 left:40px;
 width:200px;
@@ -94,6 +97,18 @@ text-align:center;
 
 #sg-text{
 right:40px;
+width:200px;
+text-align:center;
+}
+
+#lk-text{
+left:260px;
+width:200px;
+text-align:center;
+}
+
+#hk-text{
+right:260px;
 width:200px;
 text-align:center;
 }
@@ -195,7 +210,7 @@ font-size:14px;
 color:#00ffff;
 }
 
-/* INTRO */
+/* INTRO VIDEO */
 
 #intro{
 position:fixed;
@@ -210,14 +225,84 @@ align-items:center;
 z-index:9999;
 }
 
-.intro-logo{
-width:220px;
-animation:introZoom 2s ease;
+#intro video{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-@keyframes introZoom{
-0%{transform:scale(0);opacity:0;}
-100%{transform:scale(1);opacity:1;}
+/* MOBILE 2x2 LAYOUT */
+
+@media (max-width:768px){
+
+.container{
+width:90%;
+padding:20px;
+}
+
+.globe{
+width:100px;
+height:100px;
+transform:none;
+}
+
+#vietnam{
+top:8%;
+left:10%;
+}
+
+#singapore{
+top:8%;
+right:10%;
+}
+
+#srilanka{
+bottom:8%;
+left:10%;
+}
+
+#hongkong{
+bottom:8%;
+right:10%;
+}
+
+.globe-text{
+font-size:12px;
+top:auto;
+}
+
+#vn-text{
+top:20%;
+left:10%;
+width:100px;
+}
+
+#sg-text{
+top:20%;
+right:10%;
+width:100px;
+}
+
+#lk-text{
+bottom:2%;
+left:10%;
+width:100px;
+}
+
+#hk-text{
+bottom:2%;
+right:10%;
+width:100px;
+}
+
+h1{
+font-size:26px;
+}
+
+.logo{
+height:55px;
+}
+
 }
 
 </style>
@@ -226,13 +311,15 @@ animation:introZoom 2s ease;
 
 <body>
 
-<!-- INTRO -->
+<!-- INTRO VIDEO -->
 
 <div id="intro">
-<img src="logo2.png" class="intro-logo">
+<video autoplay muted playsinline>
+<source src="videointro.mp4" type="video/mp4">
+</video>
 </div>
 
-<!-- VIDEO -->
+<!-- VIDEO BACKGROUND -->
 
 <video autoplay muted loop>
 <source src="video.mp4" type="video/mp4">
@@ -242,14 +329,13 @@ animation:introZoom 2s ease;
 
 <div id="vietnam" class="globe"></div>
 <div id="singapore" class="globe"></div>
+<div id="srilanka" class="globe"></div>
+<div id="hongkong" class="globe"></div>
 
-<div id="vn-text" class="globe-text">
-Xin chào Việt Nam 🇻🇳
-</div>
-
-<div id="sg-text" class="globe-text">
-Hello Singapore 🇸🇬
-</div>
+<div id="vn-text" class="globe-text">Xin chào Việt Nam 🇻🇳</div>
+<div id="sg-text" class="globe-text">Hello Singapore 🇸🇬</div>
+<div id="lk-text" class="globe-text">Hello Sri Lanka 🇱🇰</div>
+<div id="hk-text" class="globe-text">Hello Hong Kong 🇭🇰</div>
 
 <div class="container">
 
@@ -289,12 +375,11 @@ CSKH
 
 <script>
 
-/* INTRO */
+/* INTRO VIDEO 5s */
 
 setTimeout(function(){
 document.getElementById("intro").style.display="none";
-},3000);
-
+},5000);
 
 /* GLOBE */
 
@@ -358,7 +443,8 @@ animate();
 
 createGlobe("vietnam","https://flagcdn.com/w640/vn.png","https://c168kmn.top");
 createGlobe("singapore","https://flagcdn.com/w640/sg.png","https://c168kmn.top");
-
+createGlobe("srilanka","https://flagcdn.com/w640/lk.png","https://c168kmn.top");
+createGlobe("hongkong","https://flagcdn.com/w640/hk.png","https://c168kmn.top");
 
 /* USER COUNTER */
 
