@@ -242,7 +242,27 @@ padding:20px;
 }
 
 /* globe nhỏ lại */
+.country-bar{
+position:fixed;
+bottom:10px;
+width:100%;
+overflow:hidden;
+white-space:nowrap;
+}
 
+.country-bar span{
+display:inline-block;
+color:#00ffff;
+font-size:14px;
+font-weight:bold;
+text-shadow:0 0 10px #00ffff;
+animation:scrollText 12s linear infinite;
+}
+
+@keyframes scrollText{
+0%{ transform:translateX(100%); }
+100%{ transform:translateX(-100%); }
+}
 .globe{
 position:absolute;
 width:60px;
@@ -319,10 +339,14 @@ font-size:13px;
 <div id="srilanka" class="globe"></div>
 <div id="hongkong" class="globe"></div>
 
-<div id="vn-text" class="globe-text">Xin chào Việt Nam 🇻🇳</div>
-<div id="sg-text" class="globe-text">Hello Singapore 🇸🇬</div>
-<div id="lk-text" class="globe-text">Hello Sri Lanka 🇱🇰</div>
-<div id="hk-text" class="globe-text">Hello Hong Kong 🇭🇰</div>
+<div class="country-bar">
+<span>
+🌍 Xin chào Việt Nam 🇻🇳 &nbsp;&nbsp;&nbsp;
+🌍 Hello Sri Lanka 🇱🇰 &nbsp;&nbsp;&nbsp;
+🌍 Hello Hong Kong 🇭🇰 &nbsp;&nbsp;&nbsp;
+🌍 Hello Singapore 🇸🇬
+</span>
+</div>
 
 <div class="container">
 
@@ -369,6 +393,7 @@ document.getElementById("intro").style.display="none";
 },5000);
 
 /* GLOBE */
+
 
 function createGlobe(id, flag, link){
 
