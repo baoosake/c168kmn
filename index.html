@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
 
@@ -231,69 +232,51 @@ height:100%;
 object-fit:cover;
 }
 
-/* MOBILE 2x2 LAYOUT */
+/* MOBILE FIX */
 
 @media (max-width:768px){
 
 .container{
-width:90%;
+width:92%;
 padding:20px;
 }
 
+/* globe nhỏ lại */
+
 .globe{
-width:100px;
-height:100px;
+position:absolute;
+width:60px;
+height:60px;
+top:auto;
+bottom:100px;
 transform:none;
 }
 
-#vietnam{
-top:8%;
-left:10%;
-}
+/* vị trí 4 globe */
 
-#singapore{
-top:8%;
-right:10%;
-}
+#vietnam{ left:5%; }
+#srilanka{ left:30%; }
+#hongkong{ right:30%; }
+#singapore{ right:5%; }
 
-#srilanka{
-bottom:8%;
-left:10%;
-}
-
-#hongkong{
-bottom:8%;
-right:10%;
-}
+/* text dưới globe */
 
 .globe-text{
-font-size:12px;
+position:absolute;
 top:auto;
+bottom:60px;
+font-size:11px;
+width:75px;
+text-align:center;
+line-height:1.2;
 }
 
-#vn-text{
-top:20%;
-left:10%;
-width:100px;
-}
+/* chia đều 4 cột */
 
-#sg-text{
-top:20%;
-right:10%;
-width:100px;
-}
-
-#lk-text{
-bottom:2%;
-left:10%;
-width:100px;
-}
-
-#hk-text{
-bottom:2%;
-right:10%;
-width:100px;
-}
+#vn-text{ left:3%; }
+#lk-text{ left:28%; }
+#hk-text{ right:28%; }
+#sg-text{ right:3%; }
 
 h1{
 font-size:26px;
@@ -301,6 +284,10 @@ font-size:26px;
 
 .logo{
 height:55px;
+}
+
+.live{
+font-size:13px;
 }
 
 }
@@ -375,7 +362,7 @@ CSKH
 
 <script>
 
-/* INTRO VIDEO 5s */
+/* INTRO VIDEO */
 
 setTimeout(function(){
 document.getElementById("intro").style.display="none";
